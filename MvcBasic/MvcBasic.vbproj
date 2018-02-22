@@ -148,6 +148,7 @@
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
     <Import Include="System.Linq" />
+    <Import Include="System.Web.Mvc.Razor" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Collections.Specialized" />
@@ -173,6 +174,7 @@
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Controllers\BeginController.vb" />
+    <Compile Include="Controllers\TestController.vb" />
     <Compile Include="Controllers\ViewController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -232,6 +234,10 @@
     <Content Include="Views\Begin\Show.vbhtml" />
     <Content Include="Views\Home\LogOn.vbhtml" />
     <Content Include="Views\Begin\List.vbhtml" />
+    <Content Include="Views\Home\Menu.vbhtml" />
+    <Content Include="Views\Test\TestPage1.vbhtml" />
+    <Content Include="Views\Test\TestPage2.vbhtml" />
+    <Content Include="Views\View\Form.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -264,7 +270,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\View\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
