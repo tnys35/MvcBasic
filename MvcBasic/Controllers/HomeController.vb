@@ -1,6 +1,8 @@
 ﻿Public Class HomeController
     Inherits System.Web.Mvc.Controller
 
+    Dim _db_Master As New MasterDAO
+
     Function Index() As ActionResult
         Return View()
     End Function
@@ -23,13 +25,13 @@
 
     <AllowAnonymous>
     <HttpPost>
-    Function Logon(ByVal user As Member) As ActionResult
+    Function Logon(ByVal user As User) As ActionResult
 
-        If String.IsNullOrEmpty(user.UserId) Then
+        If String.IsNullOrEmpty(user.userId) Then
             ModelState.AddModelError("userId", "userId" & "を入力して下さい。")
         End If
 
-        If String.IsNullOrEmpty(user.PassWord) Then
+        If String.IsNullOrEmpty(user.passWord) Then
             ModelState.AddModelError("passWord", "passWord" & "を入力して下さい。")
         End If
 
@@ -37,7 +39,26 @@
             Return View(user)
         End If
 
-        Session("userid") = user.UserId
+        Dim u As New User
+        Try
+            u = _db_Master.fncGetUser(user.userId)
+        Catch ex As Exception
+            ViewData("Message") = "ログイン処理に失敗しました。" & vbCrLf & ex.Message
+            Return View()
+        End Try
+
+        If u Is Nothing OrElse String.IsNullOrEmpty(u.UserId) Then
+            ViewData("Message") = "対象のユーザーIDは存在しません。"
+            Return View()
+        Else
+            If Not u.passWord = user.passWord Then
+                ViewData("Message") = "入力したパスワードが間違っています。"
+                Return View()
+            End If
+        End If
+
+        Session("userid") = u.UserId
+        Session("username") = u.UserName
         Return RedirectToAction("Menu", "Home")
     End Function
 

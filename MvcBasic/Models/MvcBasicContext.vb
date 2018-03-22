@@ -4,12 +4,12 @@ Namespace MvcBasic.Models
 
     Public Class MvcBasicContext
 
-        Private _DbSet As Member
-        Public Property DbSet As Member
+        Private _DbSet As User
+        Public Property DbSet As User
             Get
                 Return _DbSet
             End Get
-            Set(value As Member)
+            Set(value As User)
                 _DbSet = value
             End Set
         End Property
@@ -17,4 +17,3 @@ Namespace MvcBasic.Models
     End Class
 
 End Namespace
-

@@ -1,4 +1,4 @@
-﻿@modeltype Member
+﻿@modeltype User
 
 @Code
     ViewData("Title") = "LogOn"
@@ -13,7 +13,7 @@ End Code
         @<text>
             <hr />
             <fieldset>
-                @ViewData("Message")
+                <font color="red">@ViewData("Message")</font>
                 <p>
                     <label for="userId">@Html.LabelFor(Function(model) model.UserId)</label><br />
                     @Html.TextBoxFor(Function(model) model.UserId)

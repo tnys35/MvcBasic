@@ -6,21 +6,17 @@ Namespace MvcBasic.Models
 
     Public Class MvcBasicInitializer
 
-        Dim members As New List(Of Member) _
+        Dim members As New List(Of User) _
     From {
-    New Member() With {
-        .UserName = "なまえ１",
-        .MailAddress = "mail1@example.com",
-        .Birth = DateTime.Parse("1980-06-25"),
-        .Married = False,
-        .Remark = "備考1です"
+    New User() With {
+        .userName = "なまえ１",
+        .mailAddress = "mail1@example.com",
+        .remark = "備考1です"
     },
-    New Member() With {
-        .UserName = "なまえ２",
-        .MailAddress = "mail2@example.com",
-        .Birth = DateTime.Parse("1975-06-25"),
-        .Married = False,
-        .Remark = "備考2です"
+    New User() With {
+        .userName = "なまえ２",
+        .mailAddress = "mail2@example.com",
+        .remark = "備考2です"
     }
 }
 
