@@ -47,7 +47,7 @@
             Return View()
         End Try
 
-        If u Is Nothing OrElse String.IsNullOrEmpty(u.UserId) Then
+        If u Is Nothing OrElse String.IsNullOrEmpty(u.userId) Then
             ViewData("Message") = "対象のユーザーIDは存在しません。"
             Return View()
         Else
@@ -57,8 +57,8 @@
             End If
         End If
 
-        Session("userid") = u.UserId
-        Session("username") = u.UserName
+        Session("userid") = u.userId
+        Session("username") = u.userName
         Return RedirectToAction("Menu", "Home")
     End Function
 
@@ -67,6 +67,11 @@
             Return RedirectToAction("Logon", "Home")
         End If
 
+        Return View()
+    End Function
+
+    ' GET: View
+    Function From() As ActionResult
         Return View()
     End Function
 

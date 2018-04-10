@@ -1,4 +1,4 @@
-﻿@modeltype Member
+﻿@modeltype User
 
 @Code
     ViewData("Title") = "TestPage1"

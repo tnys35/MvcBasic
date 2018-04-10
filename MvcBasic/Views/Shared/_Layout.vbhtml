@@ -17,13 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("アプリケーション名", "Index", "Home", New With { .area = "" }, New With { .class = "navbar-brand" })
+                @Html.ActionLink("アプリケーション名", "LogOn", "Home", New With {.area = ""}, New With {.class = "navbar-brand"})
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("ホーム", "Index", "Home")</li>
                     <li>@Html.ActionLink("詳細", "About", "Home")</li>
-                    <li>@Html.ActionLink("問い合わせ", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("連絡先", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>

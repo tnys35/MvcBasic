@@ -38,11 +38,13 @@
                 If Not _db_Master.fncEditUser(user) Then
                     ViewData("Message") = "ユーザー編集に失敗しました。"
                 End If
+
+                ViewData("Message") = "ユーザー編集が完了しました。"
             Catch ex As Exception
                 ViewData("Message") = "ユーザー編集に失敗しました。" & vbCrLf & ex.Message
             End Try
-
             Return View()
+
         End Function
     End Class
 End Namespace
